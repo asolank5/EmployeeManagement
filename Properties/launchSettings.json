@@ -1,4 +1,5 @@
-﻿{
+﻿//This file is needed to only run on local machine, not needed to deploy application
+{
   "iisSettings": {
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
@@ -8,15 +9,17 @@
     }
   },
   "profiles": {
-    "IIS Express": {
+    "IIS Express": {    //if we run our app by hitting ctrl+F5 or F5, this will call
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-       "ASPNETCORE_ENVIRONMENT": "Staging",
+        "ASPNETCORE_ENVIRONMENT": "Development",
         "MyKey": "Value of MyKey from Environment Variable"
+        //we can change it to Staging or Production env or add new env variables
+        // and the code that executes this is defined in Startup.cs file "env.IsDevelopment"
       }
     },
-    "EmployeeManagement": {
+    "EmployeeManagement": {   //
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
